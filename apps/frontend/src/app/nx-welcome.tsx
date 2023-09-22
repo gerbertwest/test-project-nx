@@ -1,3 +1,6 @@
+import { useAppSelector } from "./hooks/index";
+import { dataSelector } from "./store/selectors";
+
 /*
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  This is a starter component and can be deleted.
@@ -6,6 +9,10 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 export function NxWelcome({ title }: { title: string }) {
+
+  const data = useAppSelector(dataSelector)
+  console.log(data)
+
   return (
     <>
       <style
@@ -419,7 +426,7 @@ export function NxWelcome({ title }: { title: string }) {
           <div id="welcome">
             <h1>
               <span> Hello there, </span>
-              Welcome {title} 👋
+              Welcome {title} {data}👋
             </h1>
           </div>
 
